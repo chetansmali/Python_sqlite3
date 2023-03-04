@@ -1,9 +1,12 @@
+#import sqlite and pandas
 import sqlite3 as sq
 import pandas as pd
-   
+
+#create Data.db file automatically    
 connection = sq.connect('Data.db')
 curs = connection.cursor()
 
+# create table with same parameters as in .csv has 
 curs.execute("create table if not exists coin" + "(SNo,Name,Symbol,Date,High,Low,Open,Close,Volume,Marketcap)")
  
 # Load CSV data into Pandas DataFrame
